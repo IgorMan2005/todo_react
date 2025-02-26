@@ -6,6 +6,14 @@ class ListItem extends React.Component {
 		important: false
 	}
 
+	onImportantClick() {
+		console.log('onImportantClick!');
+	}
+
+	onDeleteClick = () => {
+		console.log('onDeleteClick (!)');
+	}
+
 	render() {
 
 		let classNames = 'todo-item';
@@ -17,10 +25,16 @@ class ListItem extends React.Component {
 		<li className={classNames}>
 			<span className="todo-item-text">{this.props.task.title}</span>
 			<div className="btn-group">
-				<button role="button" className="btn btn-outline-dark btn-sm">
+				<button
+				onClick={this.onImportantClick} 
+				role="button" 
+				className="btn btn-outline-dark btn-sm">
 					Важное
 				</button>
-				<button role="button" className="btn btn-outline-danger btn-sm">
+				<button 
+				onClick={ this.onDeleteClick }
+				role="button" 
+				className="btn btn-outline-danger btn-sm">
 					Удалить
 				</button>
 			</div>
