@@ -3,11 +3,15 @@ import React from "react";
 class ListItem extends React.Component {
 
 	state = {
-		important: false
+		important: false,
+		done: false,
 	}
 
-	onImportantClick() {
-		console.log('onImportantClick!');
+	// Only () => (!)
+	onImportantClick = () => {
+		this.setState({
+			important: true
+		})
 	}
 
 	onDeleteClick = () => {

@@ -26,4 +26,7 @@ git push -u origin main
 4. Клик по кнопке
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273253>
 
-5.
+5. Обновление состояния компонента
+   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273256>
+
+6.
