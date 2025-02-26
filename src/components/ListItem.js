@@ -1,7 +1,13 @@
-function ListItem(props) {
-	return (
+import React from "react";
+
+class ListItem extends React.Component {
+	render() {
+
+		console.log('props.task.title:', this);
+
+		return (
 		<li className="todo-item">
-			<span className="todo-item-text">{props.task.title}</span>
+			<span className="todo-item-text">{this.props.task.title}</span>
 			<div className="btn-group">
 				<button role="button" className="btn btn-outline-dark btn-sm">
 					Важное
@@ -11,7 +17,8 @@ function ListItem(props) {
 				</button>
 			</div>
 		</li>
-	);
+		);
+	} 
 }
 
 export default ListItem;
