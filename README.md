@@ -20,4 +20,7 @@ git push -u origin main
 2. Компонент класс
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273246>
 
-3.
+3. Состояние для компонента класса
+   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273249>
+
+4.
