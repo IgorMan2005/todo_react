@@ -9,8 +9,11 @@ class ListItem extends React.Component {
 
 	// Only () => (!)
 	onImportantClick = () => {
-		this.setState({
-			important: true
+		this.setState((state) => {
+			return {
+				// parametr state (!)
+				important: !state.important
+			}
 		})
 	}
 

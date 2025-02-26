@@ -31,3 +31,6 @@ git push -u origin main
 
 6. Обновление состояния основываясь на текущем состоянии компонента
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273260>
+
+7. Самостоятельное упражнение. Статус done
+   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273263>
