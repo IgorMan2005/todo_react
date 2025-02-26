@@ -29,4 +29,5 @@ git push -u origin main
 5. Обновление состояния компонента
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273256>
 
-6.
+6. Обновление состояния основываясь на текущем состоянии компонента
+   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273260>
