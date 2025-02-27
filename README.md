@@ -37,3 +37,6 @@ git push -u origin main
 
 8. Переносим данные приложения в state компонента App
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273266>
+
+9. Переносим свойства задач в общий state
+   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273270>

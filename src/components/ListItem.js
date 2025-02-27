@@ -35,9 +35,9 @@ class ListItem extends React.Component {
 
 		let classNames = 'todo-item';
 
-		if (this.state.important)
+		if (this.props.task.important)
 			classNames += ' important';
-		if (this.state.done)
+		if (this.props.task.done)
 			classNames += ' done';
 
 		return (

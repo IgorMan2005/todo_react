@@ -9,9 +9,9 @@ class App extends React.Component {
 
 	state = {
 			todoData: [
-			{ id: 0, title: 'Выпить кофе' },
-			{ id: 1, title: 'Сделать React приложение' },
-			{ id: 2, title: 'Позавтракать' },
+			{ id: 0, title: 'Выпить кофе', important: false, done: false },
+			{ id: 1, title: 'Сделать React приложение', important: true, done: false  },
+			{ id: 2, title: 'Позавтракать', important: false, done: false  },
 		]
 	}
 
