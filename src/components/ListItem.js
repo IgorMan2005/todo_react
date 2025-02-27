@@ -17,11 +17,12 @@ class ListItem extends React.Component {
 		})
 	}
 
-	onDoneClick = () => {
+	onTitleClick = () => {
 		this.setState((state) => {
 			return {
 				// parametr state (!)
-				done: !state.done
+				done: !state.done,
+				important: false		// remove important
 			}
 		})
 	}
@@ -42,7 +43,7 @@ class ListItem extends React.Component {
 		return (
 		<li className={classNames}>
 			<span className="todo-item-text"
-			onClick={this.onDoneClick} 
+			onClick={this.onTitleClick} 
 			>
 				{this.props.task.title}
 			</span>
