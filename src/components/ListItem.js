@@ -17,6 +17,15 @@ class ListItem extends React.Component {
 		})
 	}
 
+	onDoneClick = () => {
+		this.setState((state) => {
+			return {
+				// parametr state (!)
+				done: !state.done
+			}
+		})
+	}
+
 	onDeleteClick = () => {
 		console.log('onDeleteClick (!)');
 	}
@@ -27,10 +36,16 @@ class ListItem extends React.Component {
 
 		if (this.state.important)
 			classNames += ' important';
+		if (this.state.done)
+			classNames += ' done';
 
 		return (
 		<li className={classNames}>
-			<span className="todo-item-text">{this.props.task.title}</span>
+			<span className="todo-item-text"
+			onClick={this.onDoneClick} 
+			>
+				{this.props.task.title}
+			</span>
 			<div className="btn-group">
 				<button
 				onClick={this.onImportantClick} 

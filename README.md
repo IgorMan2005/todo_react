@@ -34,3 +34,4 @@ git push -u origin main
 
 7. Самостоятельное упражнение. Статус done
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273263>
+
