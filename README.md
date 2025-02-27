@@ -35,3 +35,5 @@ git push -u origin main
 7. Самостоятельное упражнение. Статус done
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273263>
 
+8. Переносим данные приложения в state компонента App
+   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273266>
