@@ -2,31 +2,6 @@ import React from "react";
 
 class ListItem extends React.Component {
 
-	// state = {
-	// 	important: false,
-	// 	done: false,
-	// }
-
-	// Only () => (!)
-	onImportantClick = () => {
-		this.setState((state) => {
-			return {
-				// parametr state (!)
-				important: !state.important
-			}
-		})
-	}
-
-	onTitleClick = () => {
-		this.setState((state) => {
-			return {
-				// parametr state (!)
-				done: !state.done,
-				important: false		// remove important
-			}
-		})
-	}
-
 	onDeleteClick = () => {
 		console.log('onDeleteClick (!)');
 	}
@@ -43,7 +18,7 @@ class ListItem extends React.Component {
 		return (
 		<li className={classNames}>
 			<span className="todo-item-text"
-			onClick={this.onTitleClick} 
+			onClick={()=> {this.props.onToggleTitle(this.props.task.id)}} 
 			>
 				{this.props.task.title}
 			</span>

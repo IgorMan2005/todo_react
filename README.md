@@ -43,3 +43,6 @@ git push -u origin main
 
 10. Запускаем метод внутри другого компонента
     <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273273>
+
+11. Изменение данных в state. Отмечаем "важные" задачи
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273277>
