@@ -14,7 +14,7 @@ git push -u origin main
 
 ---
 
-1. стартовый код
+1. Стартовый код
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273243&editMode=0>
 
 2. Компонент класс
@@ -46,3 +46,12 @@ git push -u origin main
 
 11. Изменение данных в state. Отмечаем "важные" задачи
     <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273277>
+
+12. Задание. Отмечаем "выполненные" задачи
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273280>
+
+13. Скринкаст. Отмечаем "выполненные" задачи
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273283>
+
+14. Удаление задач
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273287>
