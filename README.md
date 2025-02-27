@@ -40,3 +40,6 @@ git push -u origin main
 
 9. Переносим свойства задач в общий state
    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273270>
+
+10. Запускаем метод внутри другого компонента
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273273>

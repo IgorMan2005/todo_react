@@ -2,10 +2,10 @@ import React from "react";
 
 class ListItem extends React.Component {
 
-	state = {
-		important: false,
-		done: false,
-	}
+	// state = {
+	// 	important: false,
+	// 	done: false,
+	// }
 
 	// Only () => (!)
 	onImportantClick = () => {
@@ -49,7 +49,7 @@ class ListItem extends React.Component {
 			</span>
 			<div className="btn-group">
 				<button
-				onClick={this.onImportantClick} 
+				onClick={() => {this.props.onToggleImportant(this.props.task.id)}} 
 				role="button" 
 				className="btn btn-outline-dark btn-sm">
 					Важное

@@ -15,13 +15,17 @@ class App extends React.Component {
 		]
 	}
 
+	onToggleImportant = (id) => {
+		console.log('onToggleImportant:', id);
+	}
+
 
 	render() {
 		return (
 			<div>
 				<Header />
 				<Search />
-				<List data={this.state.todoData}/>
+				<List data={this.state.todoData} onToggleImportant={this.onToggleImportant}/>
 				<Footer />
 			</div>
 		);
