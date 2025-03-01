@@ -58,3 +58,9 @@ git push -u origin main
 
 15. Добавление задач
     <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273290>
+
+16. Поиск задач по названию
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273295>
+
+17. Фильтрация задач по статусу
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273299>

@@ -8,11 +8,14 @@ import Form from './Form';
 class App extends React.Component {
 
 	state = {
-			todoData: [
-			{ id: 0, title: 'Выпить кофе', important: false, done: false },
-			{ id: 1, title: 'Сделать React приложение', important: false, done: false  },
-			{ id: 2, title: 'Позавтракать', important: false, done: false  },
-		]
+		// первоначальный массив  
+		todoData: [
+		{ id: 0, title: 'Выпить кофе', important: false, done: false },
+		{ id: 1, title: 'Сделать React приложение', important: false, done: false  },
+		{ id: 2, title: 'Позавтракать', important: false, done: false  },
+		],
+		// поиcковая фраза:
+		search: '',
 	}
 
 	onToggleImportant = (id) => {
@@ -95,14 +98,40 @@ class App extends React.Component {
 		} )
 	}
 
+	// search - filter tasks by title
+	searchTask = (tasks, search) => {
+		// если пустая поисковая фраза
+		if( search.trim().length === 0)
+			return tasks;
+
+		// фильтрация по поисковой фразе:
+		return tasks.filter((task) => {	
+			if(task.title.toLowerCase().indexOf(search.toLowerCase().trim()) > -1 ) {
+					return true;
+				}
+			});
+	}
+
+
+	// изменение в строке поиска
+	changeSearch = (search) => {
+		// console.log('changeSearch:', search);
+		this.setState({
+			search: search
+		});
+	}
 
 	render() {
+
+		const filterTasks = this.searchTask(this.state.todoData, this.state.search)
+	
 		return (
 			<div>
 				<Header />
-				<Search />
+				<Search changeSearch={this.changeSearch} search={this.state.search}/>
 				<List 
-				data={this.state.todoData} 
+				// data={this.state.todoData} 
+				data={filterTasks}							// Отправляем уже отфильтрованные по поиску задачи 
 				onToggleImportant={this.onToggleImportant}
 				onToggleTitle={this.onToggleTitle}
 				onDeleteClick={this.onDeleteClick}
@@ -112,7 +141,5 @@ class App extends React.Component {
 		);
 	}
 } 
-
-
 
 export default App;

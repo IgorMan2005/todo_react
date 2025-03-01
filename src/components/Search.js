@@ -1,7 +1,11 @@
-function List() {
+function Search(props) {
     return (
 		<div className="search">
-			<input type="text" placeholder="введите фразу для поиска" className="form-control me-2" />
+			<input type="text" 
+			onChange={(e) => props.changeSearch(e.target.value)}
+			value={props.search}
+			placeholder="введите фразу для поиска" 
+			className="form-control me-2" />
 			<div className="btn-group" role="group">
 				<button type="button" className="btn btn-primary">
 					Все
@@ -17,4 +21,4 @@ function List() {
 	);
 }
 
-export default List;
+export default Search;
