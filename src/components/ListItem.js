@@ -2,10 +2,6 @@ import React from "react";
 
 class ListItem extends React.Component {
 
-	onDeleteClick = () => {
-		console.log('onDeleteClick (!)');
-	}
-
 	render() {
 
 		let classNames = 'todo-item';
@@ -30,7 +26,7 @@ class ListItem extends React.Component {
 					Важное
 				</button>
 				<button 
-				onClick={ this.onDeleteClick }
+				onClick={ () => {this.props.onDeleteClick(this.props.task.id) }}
 				role="button" 
 				className="btn btn-outline-danger btn-sm">
 					Удалить

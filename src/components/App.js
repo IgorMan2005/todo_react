@@ -57,6 +57,23 @@ class App extends React.Component {
 		})
 	}
 
+	onDeleteClick = (id) => {
+			console.log('onDeleteClick:' , id);
+			this.setState((state) => {
+			// 1. Найти индекс
+			const index = state.todoData.findIndex( (e) => e.id === id);
+			// 2. Сформировать новый массив todoData без удалённого элемнта (!)
+			const part1 = state.todoData.slice(0, index);		// часть массива до index
+			const part2 = state.todoData.slice(index + 1);		// часть массива после index
+			const newArray = [...part1, ...part2];
+
+			return {
+				todoData: newArray	// возвращаем новый массив (!)
+			}
+		})
+	}
+
+
 	render() {
 		return (
 			<div>
@@ -66,6 +83,7 @@ class App extends React.Component {
 				data={this.state.todoData} 
 				onToggleImportant={this.onToggleImportant}
 				onToggleTitle={this.onToggleTitle}
+				onDeleteClick={this.onDeleteClick}
 				/>
 				<Footer />
 			</div>

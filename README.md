@@ -55,3 +55,6 @@ git push -u origin main
 
 14. Удаление задач
     <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273287>
+
+15. Добавление задач
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273290>
