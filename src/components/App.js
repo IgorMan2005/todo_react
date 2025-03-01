@@ -3,7 +3,7 @@ import React from "react";
 import Header from './Header';
 import Search from './Search';
 import List from './List';
-import Footer from './Footer';
+import Form from './Form';
 
 class App extends React.Component {
 
@@ -73,6 +73,28 @@ class App extends React.Component {
 		})
 	}
 
+	// Add Task (!)
+	addTask = (title) => {
+		// console.log('addTask:', title);
+
+		const newTask = {
+			// id последнего элемента + 1
+			id: this.state.todoData[this.state.todoData.length-1]['id'] + 1, 
+			title: title, 
+			important: false, 
+			done: false
+		}
+
+		this.setState( (state) => {
+
+			const newArray = [ ...state.todoData, newTask]
+
+			return {
+				todoData: newArray
+			}
+		} )
+	}
+
 
 	render() {
 		return (
@@ -85,7 +107,7 @@ class App extends React.Component {
 				onToggleTitle={this.onToggleTitle}
 				onDeleteClick={this.onDeleteClick}
 				/>
-				<Footer />
+				<Form addTask={this.addTask} />
 			</div>
 		);
 	}
