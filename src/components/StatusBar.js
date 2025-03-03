@@ -1,27 +1,32 @@
+
 function StatusBar(props) {
+
+const buttons = [
+	{status:'all', name:'Все'},
+	{status:'active', name:'Активные'},
+	{status:'done', name:'Выполненные'},
+]
+
+const buttonsMap = buttons.map((button) => {
+
+	const btnClass = props.status === button.status ? 'btn-primary' : 'btn-light';
+
+	return (
+			<button 
+				key={button.status} 
+				onClick={() => props.changeStatus(button.status)} 
+				type="button" 
+				className={`btn ${btnClass}`}
+				>
+				{button.name}
+			</button>
+		)
+		
+	})
+
     return ( 
            <div className="btn-group" role="group">
-				<button 
-				onClick={() => props.changeStatus('all')} 
-				type="button" 
-				className={`btn ${props.status === 'all' ? 'btn-primary' : 'btn-light'}`}
-				>
-					Все
-				</button>
-				<button 
-				onClick={()=>props.changeStatus('active')} 
-				type="button" 
-				className={`btn ${props.status === 'active' ? 'btn-primary' : 'btn-light'}`}
-				>
-					Активные
-				</button>
-				<button 
-				onClick={()=>props.changeStatus('done')} 
-				type="button" 
-				className={`btn ${props.status === 'done' ? 'btn-primary' : 'btn-light'}`}
-				>
-					Выполненные
-				</button>
+				{buttonsMap}
 			</div>
      );
 }
