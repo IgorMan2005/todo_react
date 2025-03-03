@@ -64,3 +64,5 @@ git push -u origin main
 
 17. Фильтрация задач по статусу
     <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273299>
+
+Подключение UI из компонента StatusBar

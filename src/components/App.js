@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from './Header';
 import Search from './Search';
+import StatusBar from "./StatusBar";
 import List from './List';
 import Form from './Form';
 
@@ -16,6 +17,8 @@ class App extends React.Component {
 		],
 		// поиcковая фраза:
 		search: '',
+		// статус задач (фильтр) - all, active, done
+		done: 'all',	
 	}
 
 	onToggleImportant = (id) => {
@@ -121,17 +124,39 @@ class App extends React.Component {
 		});
 	}
 
+
+	// Filter by Status
+	filterByStatus = (tasks, status) => {
+		switch (status) {
+			case 'all':
+				return tasks;
+			case 'active':
+				return tasks.filter( (task) => task.done === false);		// false
+			case 'done':
+				return tasks.filter( (task) => task.done === true);			// true
+			default:
+				return tasks;
+		}
+	}
+
 	render() {
 
-		const filterTasks = this.searchTask(this.state.todoData, this.state.search)
+		// search
+		const filterBySearchTasks = this.searchTask(this.state.todoData, this.state.search)
+		// filter by status
+		const filterByStatusTasks = this.filterByStatus(filterBySearchTasks , this.state.done)
+		console.log('filterByStatusTasks:', filterByStatusTasks);
 	
 		return (
 			<div>
 				<Header />
-				<Search changeSearch={this.changeSearch} search={this.state.search}/>
+				<div className="search">
+					<Search changeSearch={this.changeSearch} search={this.state.search}/>
+					<StatusBar />
+				</div>
 				<List 
 				// data={this.state.todoData} 
-				data={filterTasks}							// Отправляем уже отфильтрованные по поиску задачи 
+				data={filterByStatusTasks}							// Отправляем уже отфильтрованные по поиску и статусу задачи (!)
 				onToggleImportant={this.onToggleImportant}
 				onToggleTitle={this.onToggleTitle}
 				onDeleteClick={this.onDeleteClick}
