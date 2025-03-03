@@ -139,20 +139,26 @@ class App extends React.Component {
 		}
 	}
 
+	// Change Status (by bottons)
+	changeStatus = (status) => {
+		this.setState({
+			done: status
+		})
+	}
+
 	render() {
 
 		// search
-		const filterBySearchTasks = this.searchTask(this.state.todoData, this.state.search)
+		const filterBySearchTasks = this.searchTask(this.state.todoData, this.state.search);
 		// filter by status
-		const filterByStatusTasks = this.filterByStatus(filterBySearchTasks , this.state.done)
-		console.log('filterByStatusTasks:', filterByStatusTasks);
+		const filterByStatusTasks = this.filterByStatus(filterBySearchTasks , this.state.done);
 	
 		return (
 			<div>
 				<Header />
 				<div className="search">
 					<Search changeSearch={this.changeSearch} search={this.state.search}/>
-					<StatusBar />
+					<StatusBar changeStatus={this.changeStatus} status={this.state.done} />
 				</div>
 				<List 
 				// data={this.state.todoData} 
