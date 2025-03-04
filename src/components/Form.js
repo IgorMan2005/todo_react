@@ -1,7 +1,7 @@
-import React from "react";
+import {Component} from "react";
 
 
-class Form extends React.Component{
+class Form extends Component{
 	state = {
 		taskTitle: '' 
 	}

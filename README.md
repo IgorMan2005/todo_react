@@ -65,4 +65,15 @@ git push -u origin main
 17. Фильтрация задач по статусу
     <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273299>
 
-Подключение UI из компонента StatusBar
+18. Рефакторинг приложения. Деструктуризация. toggle методы
+    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273305>
+
+    - Деструктуризация при импорте
+      import {Component} from "react";
+
+    - Деструктуризация props
+      const task = this.props.task;
+
+    -
+
+    -

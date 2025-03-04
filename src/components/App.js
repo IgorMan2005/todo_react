@@ -1,4 +1,5 @@
-import React from "react";
+// Деструктуризация при импорте
+import {Component} from "react";
 
 import Header from './Header';
 import Search from './Search';
@@ -6,7 +7,7 @@ import StatusBar from "./StatusBar";
 import List from './List';
 import Form from './Form';
 
-class App extends React.Component {
+class App extends Component {
 
 	state = {
 		// первоначальный массив  
@@ -21,11 +22,35 @@ class App extends React.Component {
 		done: 'all',	
 	}
 
-	onToggleImportant = (id) => {
+
+	// toggleParam for V. 3
+	toggleParam = (id, param) => {
+		
+		this.setState((state) => {
+			
+			const newArray = state.todoData.map((task) => {
+				return {
+					...task,
+					[param]: id === task.id ? !task[param] : task[param],					
+				}
+			})
+
+			return {
+				todoData: newArray	// возвращаем новый массив (!)
+			}
+		})
+
+	}
+
+
+	// ---------------------
+
+	// V. 1 
+	onToggleImportant_V1 = (id) => {
 		//console.log('onToggleImportant:', id);
 		this.setState((state) => {
 			// 1. Найти индекс
-			const index = state.todoData.findIndex( (e) => e.id === id);
+			const index = state.todoData.findIndex( e => e.id === id);
 			// 2. Сформировать новый {} с обратным состоянием important
 			const oldItem = state.todoData[index];
 			//console.log(oldItem);
@@ -41,12 +66,39 @@ class App extends React.Component {
 			}
 		})
 	}
+	
 
-	onToggleTitle = (id) => {
+	// V. 2
+	onToggleImportant_V2 = (id) => {
+		//console.log('onToggleTitle:', id);
+		this.setState((state) => {
+			
+			const newArray = state.todoData.map((task) => {
+				return {
+					...task,
+					important: id === task.id ? !task.important : task.important,					
+				}
+			})
+
+			return {
+				todoData: newArray	// возвращаем новый массив (!)
+			}
+		})
+	}	
+
+	// V. 3
+	onToggleImportant = (id) => {		
+		this.toggleParam(id, 'important')
+	}	
+
+	// ---------------------
+
+	// V. 1 
+	onToggleTitle_V1 = (id) => {
 		//console.log('onToggleTitle:', id);
 		this.setState((state) => {
 			// 1. Найти индекс
-			const index = state.todoData.findIndex( (e) => e.id === id);
+			const index = state.todoData.findIndex( e => e.id === id);
 			// 2. Сформировать новый {} с обратным состоянием done
 			const oldItem = state.todoData[index];
 			//console.log(oldItem);
@@ -63,11 +115,38 @@ class App extends React.Component {
 		})
 	}
 
-	onDeleteClick = (id) => {
+	// V. 2
+	onToggleTitle_V2 = (id) => {
+		//console.log('onToggleTitle:', id);
+		this.setState((state) => {
+			
+			const newArray = state.todoData.map((task) => {
+				return {
+					...task,
+					done: id === task.id ? !task.done : task.done,
+				}
+			})
+
+			return {
+				todoData: newArray	// возвращаем новый массив (!)
+			}
+		})
+	}	
+
+	// V. 3
+	onToggleTitle = (id) => {
+		this.toggleParam(id, 'done')
+	}		
+
+	// ---------------------
+
+	// V.1 (Old)
+	onDeleteClickOld = (id) => {
 			console.log('onDeleteClick:' , id);
 			this.setState((state) => {
+				
 			// 1. Найти индекс
-			const index = state.todoData.findIndex( (e) => e.id === id);
+			const index = state.todoData.findIndex( e => e.id === id);
 			// 2. Сформировать новый массив todoData без удалённого элемнта (!)
 			const part1 = state.todoData.slice(0, index);		// часть массива до index
 			const part2 = state.todoData.slice(index + 1);		// часть массива после index
@@ -78,6 +157,16 @@ class App extends React.Component {
 			}
 		})
 	}
+
+	// V. 2
+	onDeleteClick = (id) => {			
+			this.setState((state) => {			
+			return {
+				todoData: state.todoData.filter((task) => task.id !== id)	// возвращаем новый массив (!)
+			}
+		})
+	}
+
 
 	// Add Task (!)
 	addTask = (title) => {

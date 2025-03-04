@@ -1,32 +1,35 @@
-import React from "react";
+import {Component} from "react";
 
-class ListItem extends React.Component {
+class ListItem extends Component {
 
 	render() {
 
+		const task = this.props.task;
+		//const {task, onToggleTitle, onToggleImportant, onDeleteClick} = this.props.task;
+
 		let classNames = 'todo-item';
 
-		if (this.props.task.important)
+		if (task.important)
 			classNames += ' important';
-		if (this.props.task.done)
+		if (task.done)
 			classNames += ' done';
 
 		return (
 		<li className={classNames}>
 			<span className="todo-item-text"
-			onClick={()=> {this.props.onToggleTitle(this.props.task.id)}} 
+			onClick={()=> {this.props.onToggleTitle(task.id)}} 
 			>
-				{this.props.task.title}
+				{task.title}
 			</span>
 			<div className="btn-group">
 				<button
-				onClick={() => {this.props.onToggleImportant(this.props.task.id)}} 
+				onClick={() => {this.props.onToggleImportant(task.id)}} 
 				role="button" 
 				className="btn btn-outline-dark btn-sm">
 					Важное
 				</button>
 				<button 
-				onClick={ () => {this.props.onDeleteClick(this.props.task.id) }}
+				onClick={ () => {this.props.onDeleteClick(task.id) }}
 				role="button" 
 				className="btn btn-outline-danger btn-sm">
 					Удалить
