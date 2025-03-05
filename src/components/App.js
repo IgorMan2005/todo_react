@@ -20,6 +20,10 @@ class App extends Component {
 		search: '',
 		// статус задач (фильтр) - all, active, done
 		done: 'all',	
+		// счётчик оставшихся дел
+		count_bus_todo: 2,
+		// счётчик сделанных дел
+		count_bud_finished: 5,
 	}
 
 
@@ -42,11 +46,34 @@ class App extends Component {
 
 	}
 
+	// newArray for toggleParam and countsBusiness
+	// getNewArray	
+
+
+	// Counts:
+	countsBusiness = () => {
+		this.setState((state) => {
+
+			const allBus = state.todoData.length;
+			const busFinished = state.todoData.filter((task) => {	
+			 	if(task.done === 'done') {
+					return true;
+				}
+			}).length;
+
+			return {
+				count_bus_todo: allBus - busFinished,
+				count_bud_finished: busFinished,
+			}
+		})
+	}
+
+	
 
 	// ---------------------
 
 	// V. 1 
-	onToggleImportant_V1 = (id) => {
+	onToggleImportant = (id) => {
 		//console.log('onToggleImportant:', id);
 		this.setState((state) => {
 			// 1. Найти индекс
@@ -87,14 +114,14 @@ class App extends Component {
 	}	
 
 	// V. 3
-	onToggleImportant = (id) => {		
+	onToggleImportant_V3 = (id) => {		
 		this.toggleParam(id, 'important')
 	}	
 
 	// ---------------------
 
 	// V. 1 
-	onToggleTitle_V1 = (id) => {
+	onToggleTitle = (id) => {
 		//console.log('onToggleTitle:', id);
 		this.setState((state) => {
 			// 1. Найти индекс
@@ -109,7 +136,10 @@ class App extends Component {
 			const part2 = state.todoData.slice(index + 1);		// часть массива после index
 			const newArray = [...part1, newItem, ...part2];
 
+			const busFinished = state.count_bud_finished;
+
 			return {
+				count_bud_finished: busFinished + 1,
 				todoData: newArray	// возвращаем новый массив (!)
 			}
 		})
@@ -134,7 +164,7 @@ class App extends Component {
 	}	
 
 	// V. 3
-	onToggleTitle = (id) => {
+	onToggleTitle_V3 = (id) => {
 		this.toggleParam(id, 'done')
 	}		
 
@@ -235,6 +265,8 @@ class App extends Component {
 		})
 	}
 
+	// -- RENDER ---------------------
+
 	render() {
 
 		// search
@@ -244,7 +276,11 @@ class App extends Component {
 	
 		return (
 			<div>
-				<Header />
+				<Header 
+				count_bus_todo={this.state.count_bus_todo} 
+				count_bud_finished={this.state.count_bud_finished} 
+				countsBusiness={this.countsBusiness}
+				/>
 				<div className="search">
 					<Search changeSearch={this.changeSearch} search={this.state.search}/>
 					<StatusBar changeStatus={this.changeStatus} status={this.state.done} />

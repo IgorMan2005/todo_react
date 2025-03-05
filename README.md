@@ -73,7 +73,3 @@ git push -u origin main
 
     - Деструктуризация props
       const task = this.props.task;
-
-    -
-
-    -
