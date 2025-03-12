@@ -68,6 +68,7 @@ class App extends Component {
 		}	
 
 	}
+	
 	componentDidMount(){
 		this.getJsonData(this.useJson);
 	}
