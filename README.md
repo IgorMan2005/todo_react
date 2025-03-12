@@ -1,8 +1,6 @@
 # ToDo List React.JS
 
-Сделано на основе материалов от Webcademy
-
-Курс: <https://webcademy.ru/jscourse/>
+<https://igorman2005.github.io/todo_react_site/>
 
 Git:
 
@@ -12,7 +10,7 @@ git branch -M main
 git push -u origin main
 ```
 
-## Источники для ToDo List
+## Источники для ToDo List:
 
 1. Локальный: /data/data.js  
    необходимо установить flag to use jsonServer (App.jsx): useJson = false;
@@ -26,9 +24,31 @@ git push -u origin main
 
 по умолчанию приложение работает в варианте п. 3 - Использование внешнего JSON сервера
 
+### Сборка и публикация проекта на GitHub Pages:
+
+1. Собрать build проекта:
+
+```
+npm run build
+```
+
+2. Открыть файл build/index.html и поправить пути к .js и .css файлам чтобы они начинались с точка слэш "./" По умолчанию там просто слеш "/"
+
+3. Залить на GitHub Pages ( uploading an existing file)
+   например:
+
+** ToDo List React.JS WebSite **
+<https://igorman2005.github.io/todo_react_site/>
+
+<git@github.com:IgorMan2005/todo_react_site.git>
+
+<https://github.com/IgorMan2005/todo_react_site.git>
+
 ---
 
-### ВебКадеми React info:
+#### ВебКадеми React info:
+
+Сделано на основе материалов от Webcademy. Курс: <https://webcademy.ru/jscourse/>
 
 <https://opalescent-side-463.notion.site/React-d01a762019bf48d7a88cc5a73de4416f>
 
@@ -100,6 +120,6 @@ git push -u origin main
 
 ---
 
-#### Created by Best IT Pro
+### Created by Best IT Pro
 
 <https://best-itpro.ru/>
