@@ -24,7 +24,32 @@ git push -u origin main
 
 по умолчанию приложение работает в варианте п. 3 - Использование внешнего JSON сервера
 
-### Сборка и публикация проекта на GitHub Pages:
+## Запуск приложения:
+
+1. После первоначальной загрузки из Git, сделать установку пакетов:
+
+```
+npm i
+```
+
+2. После первоначальной загрузки из Git, сделать запуск приложения:
+
+```
+npm run start
+```
+
+3. Проверить работу приложения, внести необходимые изменения:
+
+- data.js или jsonServer.js + data.json,
+- настроить флаг useJson в App.jsx (flag to use jsonServer: true / false)
+
+4. Сделать сборку приложения:
+
+```
+npm run build
+```
+
+## Публикация проекта на GitHub Pages:
 
 1. Собрать build проекта:
 
@@ -38,6 +63,7 @@ npm run build
    например:
 
 ** ToDo List React.JS WebSite **
+
 <https://igorman2005.github.io/todo_react_site/>
 
 <git@github.com:IgorMan2005/todo_react_site.git>
@@ -49,72 +75,6 @@ npm run build
 #### ВебКадеми React info:
 
 Сделано на основе материалов от Webcademy. Курс: <https://webcademy.ru/jscourse/>
-
-<https://opalescent-side-463.notion.site/React-d01a762019bf48d7a88cc5a73de4416f>
-
----
-
-1. Стартовый код
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273243&editMode=0>
-
-2. Компонент класс
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273246>
-
-3. Состояние для компонента класса
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273249>
-
-4. Клик по кнопке
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273253>
-
-5. Обновление состояния компонента
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273256>
-
-6. Обновление состояния основываясь на текущем состоянии компонента
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273260>
-
-7. Самостоятельное упражнение. Статус done
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273263>
-
-8. Переносим данные приложения в state компонента App
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273266>
-
-9. Переносим свойства задач в общий state
-   <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273270>
-
-10. Запускаем метод внутри другого компонента
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273273>
-
-11. Изменение данных в state. Отмечаем "важные" задачи
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273277>
-
-12. Задание. Отмечаем "выполненные" задачи
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273280>
-
-13. Скринкаст. Отмечаем "выполненные" задачи
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273283>
-
-14. Удаление задач
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273287>
-
-15. Добавление задач
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273290>
-
-16. Поиск задач по названию
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273295>
-
-17. Фильтрация задач по статусу
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273299>
-
-18. Рефакторинг приложения. Деструктуризация. toggle методы
-    <https://school.webcademy.ru/pl/teach/control/lesson/view?id=247273305>
-
-    - Деструктуризация при импорте
-      import {Component} from "react";
-
-    - Деструктуризация props
-      const task = this.props.task;
-
----
 
 В приложение добавлена функциональность расчёта счётчиков: осталось и сделано (!)
 
