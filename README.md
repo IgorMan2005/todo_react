@@ -49,6 +49,8 @@ npm run start
 npm run build
 ```
 
+5. Открыть файл build/index.html и поправить пути к .js, .css, favicon.ico файлам чтобы они начинались с точка слэш "./" По умолчанию может быть слеш "/"
+
 ## Публикация проекта на GitHub Pages:
 
 1. Собрать build проекта:
@@ -57,7 +59,7 @@ npm run build
 npm run build
 ```
 
-2. Открыть файл build/index.html и поправить пути к .js и .css файлам чтобы они начинались с точка слэш "./" По умолчанию там просто слеш "/"
+2. Открыть файл build/index.html и поправить пути к .js, .css, favicon.ico файлам чтобы они начинались с точка слэш "./" По умолчанию может быть слеш "/"
 
 3. Залить на GitHub Pages ( uploading an existing file)
    например:
